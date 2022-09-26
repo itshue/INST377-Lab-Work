@@ -5,6 +5,9 @@
   This file contains parts of a simple script to make your carousel work.
   Please feel free to edit away - the main version of this with all the notes is safely stored elsewhere
 */
+
+const nodemon = require('nodemon');
+
 /* eslint-enable max-len */
 // set our first slide's position to "0", the opening position in an array
 const slidePosition = 0;
@@ -29,6 +32,9 @@ function updateSlidePosition() {
 }
 
 function moveToNextSlide() {
+
+  if(slidePosition== totalSlides - 1)
+
   /*
     add an if statement here that checks
     if you're already at the max number of slides
