@@ -1,3 +1,8 @@
+<!--
+    Replace this with your working code from Lab 2, and include:
+    - The styles in this folder's `style.css`
+    - The script in script.js, which should be included via a `<script src="script.js" >` call before your closing </body> tag 
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,31 +31,19 @@
             </div>
             <div class="box right_section">
                 <h2>Image Carousel</h2>
-                <div class="images">
-                    <div class="grid">
-                        <div class="carousel">
-                            <div class="carousel_item carousel_item--visible">
-                                <img src="images/image1.png" alt="HunterxHunter"/>
-                            </div>
-                            <div class="carousel_item">
-                                <img src="images/image2.jpeg" alt="Attack on Titan"/>
-                            </div>
-                            <div class="carousel_item">
-                                <img src="images/image3.jpeg" alt="Fullmetal Alchemist: Brotherhood"/>
-                            </div>
-                            <div class="carousel_item">
-                                <img src="images/image4.jpeg" alt="Naruto Shippuden"/>
-                            </div>
-
-                            <div class="carousel_actions">
-                                <button id="image_button--prev">prev</button>
-                                <button id="image_button--next">next</button>
-                            </div>
-                        </div>
+                <div class="carousel">
+                    <button class="prev">prev</button>
+                    <div class="slides">
+                        <div class="carousel_item visible"><img id="slide_1" src="images/image1.png" alt="HunterxHunter anime"/></div>
+                        <div class="carousel_item hidden"><img id="slide_2" src="images/image2.jpeg" alt="Attack on Titan anime"/></div>
+                        <div class="carousel_item hidden"><img id="slide_3" src="images/image3.jpeg" alt="Full Metal Alchemist: Brotherhood anime"/></div>
+                        <div class="carousel_item hidden"><img id="slide_4" src="images/image4.jpeg" alt="Naruto Shippuden anime"/></div>
                     </div>
+                    <button class="next">next</button>
                 </div>
-                <div class="description">
-                    <p class="box">The images above are of the top 4 animes ever!</p>
+                <div class="box">
+                    <!--description of images-->
+                    The images above are of goated animes!
                 </div>
             </div>
         </div>
@@ -60,8 +53,4 @@
     </div>
     <script src="script.js" ></script>
   </body>
-</html><!--
-    Replace this with your working code from Lab 2, and include:
-    - The styles in this folder's `style.css`
-    - The script in script.js, which should be included via a `<script src="script.js" >` call before your closing </body> tag 
--->
+</html>
