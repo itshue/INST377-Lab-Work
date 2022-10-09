@@ -17,23 +17,28 @@
             <div class="container">
                 <div class="left_section box">
                     <h3>Form Inputs</h3>
-                    <form action="/api" class="box">
-                        <label for="resto"></label>
-                        <input type="text" name="resto id="resto">
+                    <form action="/api" class="box main_form">
+                        <div>
+                            <label for="resto"></label>
+                            <input type="text" name="resto" id="resto">
+                        </div>
                         <button type="submit">Submit!</button>
                     </form>
                 </div>
                 <div class="right_section box">
-                    <h3>Local Restaurants</h3>
-                    <div class="restaurant_list box">
+                    <h2>Local Restaurant Map</h2>
+
+                    <!-- <div id="map" class="box"></div> -->
+                    <div class="box" id="restaurant_list">
                         A list of local restaurants
                     </div>
                 </div>
             </div>
-            <div class="footer">
+            <footer class="footer">
                 <div class="subtitle"> My GitHub account can be found <a href="https://github.com/itshue/INST377-Lab-Work.git" target="_blank">here</a>.</div>
-            </div>
+            </footer>
         </div>
+        <script src="./script.js"></script>
     </body>
 </html>
 <!-- Temporarily unhook your script.js file from your main index file -->
