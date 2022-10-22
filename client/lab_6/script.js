@@ -10,9 +10,24 @@
     Under this comment place any utility functions you need - like an inclusive random number selector
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 */
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+}
 
 function injectHTML(list) {
   console.log('fired injectHTML');
+  const target = document.querySelector('#restaurant_list');
+  target.innerHTML = '';
+
+  const listEl = document.createElement('ol');
+  target.appendChild(listEl);
+  list.forEach((item) => {
+    const el = document.createElement('li');
+    el.innerText = item.name;
+    listEl.appendChild(el);
+  });
   /*
   ## JS and HTML Injection
     There are a bunch of methods to inject text or HTML into a document using JS
@@ -31,8 +46,14 @@ function injectHTML(list) {
 
 function processRestaurants(list) {
   console.log('fired restaurants list');
-
-  /*
+  const range = [...Array(15).keys()]; // creating an array of 15 elements
+  const newArray = range.map((item) => {
+    const index = getRandomIntInclusive(0, list.length);
+    return list[index];
+  });
+  return newArray;
+}
+/*
     ## Process Data Separately From Injecting It
       This function should accept your 1,000 records
       then select 15 random records
@@ -50,7 +71,6 @@ function processRestaurants(list) {
     - Return only their name, category, and location
     - Return the new list of 15 restaurants so we can work on it separately in the HTML injector
   */
-}
 
 async function mainEvent() {
   /*
@@ -105,6 +125,7 @@ async function mainEvent() {
 
       // This constant will have the value of your 15-restaurant collection when it processes
       const restaurantList = processRestaurants(arrayFromJson.data);
+      console.log(restaurantList);
 
       // And this function call will perform the "side effect" of injecting the HTML list for you
       injectHTML(restaurantList);
