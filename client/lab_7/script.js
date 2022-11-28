@@ -50,7 +50,7 @@ function processRestaurants(list) {
 function filterList(array, filterInputValue) {
   return array.filter((item) => {
     const lowerCaseName = item.name.toLowerCase();
-    const lowerCaseQuery = filterInputValue.toLowercase();
+    const lowerCaseQuery = filterInputValue.toLowerCase();
     return lowerCaseName.includes(lowerCaseQuery);
   });
 }
@@ -92,7 +92,8 @@ async function mainEvent() {
       Dot notation is preferred in JS unless you have a good reason to use brackets
       The 'data' key, which we set at line 38 in foodServiceRoutes.js, contains all 1,000 records we need
     */
-  console.table(arrayFromJson.data);
+  console.log('Test PG County Set');
+  console.table(arrayFromJson);
 
   // in your browser console, try expanding this object to see what fields are available to work with
   // for example: arrayFromJson.data[0].name, etc
