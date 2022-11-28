@@ -47,7 +47,7 @@ function processRestaurants(list) {
   return newArray;
 }
 
-function filterList(list, filterInputValue) {
+function filterList(array, filterInputValue) {
   return array.filter((item) => {
     const lowerCaseName = item.name.toLowerCase();
     const lowerCaseQuery = filterInputValue.toLowercase();
